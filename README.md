@@ -8,7 +8,9 @@ The MATLAB script "point_shielding.m" is written by Yizhou Yang. **See file "NOT
  0. Git clone 'point_shielding'.
  1. Install 'TopoToolbox' using MATLAB's ADD-ON. You can also download it using the url "https://github.com/wschwanghart/topotoolbox/releases/download/2.4/TopoToolbox.mltbx" and install manually.
  2. Download the 'latlonutm' folder from the url 'https://github.com/IPGP/mapping-lib/tree/master/latlonutm'. Only the 'll2utm.m' is called by 'point_shielding.m'. You can also switch to the 'point_shielding' folder and run a command below in MATLAB to get the 'll2utm.m'.
-    websave('ll2utm.m','https://raw.githubusercontent.com/IPGP/mapping-lib/master/latlonutm/ll2utm.m')
+```
+websave('ll2utm.m','https://raw.githubusercontent.com/IPGP/mapping-lib/master/latlonutm/ll2utm.m')
+```
  3. Download the 'CRONUS Be-10/Al-26 Calculator' using the url 'https://ars.els-cdn.com/content/image/1-s2.0-S1871101407000647-mmc3.tar' and extract the tar file. Only the 'skyline.m' is called by 'point_shielding.m'. You can also switch to the 'point_shielding' folder and run a command 'websave('skyline.m','http://stoneage.ice-d.org/math/skyline/skyline.m')' in MATLAB to get the 'skyline.m'.
  4. Prepare a DEM file covering the given point. The DEM file must be in UTM projection and WGS84 datum.
  5. Use 'addpath' command in MATLAB to locate the aforementioned 'll2utm.m' and 'skyline.m', if they are not put in the 'point_shielding' folder containing 'point_shielding.m'.
