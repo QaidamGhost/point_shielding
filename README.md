@@ -24,7 +24,7 @@ The MATLAB script "point_shielding.m" is written by Yizhou Yang. **See file "NOT
 
 ## Software Version and Dependency
  - Matlab 2021b or higher version (Recommend).
- - TopoToolbox.
+ - TopoToolbox and its dependencies.
  - 'll2utm.m' in 'latlonutm'.
  - 'skyline.m' in 'CRONUS Be-10/Al-26 Calculator'.
 
