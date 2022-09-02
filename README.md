@@ -4,8 +4,7 @@
 
 The MATLAB script "point_shielding.m" is written by Yizhou Yang. **See file "NOTICE" for copyright and licensing notice pertaining to the .m-file in this directory.**
 
-##Instruction
-
+## Instruction
  0. Git clone 'point_shielding'.
  1. Install 'TopoToolbox' using MATLAB's ADD-ON. You can also download it using the url "https://github.com/wschwanghart/topotoolbox/releases/download/2.4/TopoToolbox.mltbx" and install manually.
  2. Download the 'latlonutm' folder from the url 'https://github.com/IPGP/mapping-lib/tree/master/latlonutm'. Only the 'll2utm.m' is called by 'point_shielding.m'. You can also switch to the 'point_shielding' folder and run a command 'websave('ll2utm.m','https://raw.githubusercontent.com/IPGP/mapping-lib/master/latlonutm/ll2utm.m') in MATLAB to get the 'll2utm.m'.
