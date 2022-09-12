@@ -1,7 +1,7 @@
 function shielding_factor=point_shielding(path_to_dem,lat,lon,radius,strike,dip)
 
 %% Determine the shielding factor at the given point for calibrating cosmogenic nuclides' production rates.
-% Some dependencies are needed. See 
+% Some dependencies are needed. See README.md.
 
 %% Arguments:
 % path_to_dem: the path to DEM file using UTM projection and WGS84 datum
@@ -16,6 +16,17 @@ function shielding_factor=point_shielding(path_to_dem,lat,lon,radius,strike,dip)
 
 %% Output:
 % shielding_factor: shielding factor (unitless; scalar)
+
+    % lat=38.6087;lon=94.1242;
+    % lat=38.820272;lon=93.503892;
+
+    % check and download the dependencies
+    if ~exist("ll2utm.m","file")
+        websave('ll2utm.m','https://raw.githubusercontent.com/IPGP/mapping-lib/master/latlonutm/ll2utm.m');
+    end
+    if ~exist("skyline.m","file")
+        websave('skyline.m','http://stoneage.ice-d.org/math/skyline/skyline.m');
+    end
 
     % load DEM file
     DEM = GRIDobj(path_to_dem);
