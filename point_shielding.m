@@ -48,8 +48,13 @@ function shielding_factor=point_shielding(path_to_dem,lat,lon,radius,strike,dip)
     for i=1:DEM.georef.SpatialRef.YIntrinsicLimits(2)
         for j=1:DEM.georef.SpatialRef.XIntrinsicLimits(2)
             % determine the distance between the point and a DEM cell
-            delta_Y=(i-m)*DEM.georef.SpatialRef.SampleSpacingInWorldY;
-            delta_X=-(j-n)*DEM.georef.SpatialRef.SampleSpacingInWorldX;
+            if strcmp(DEM.georef.SpatialRef.RasterInterpretation,'postings')
+                delta_Y=(i-m)*DEM.georef.SpatialRef.SampleSpacingInWorldY;
+                delta_X=-(j-n)*DEM.georef.SpatialRef.SampleSpacingInWorldX;
+            elseif strcmp(DEM.georef.SpatialRef.RasterInterpretation,'cells')
+                delta_Y=(i-m)*DEM.georef.SpatialRef.CellExtentInWorldY;
+                delta_X=-(j-n)*DEM.georef.SpatialRef.CellExtentInWorldX;
+            end
             delta_Z=DEM.Z(i,j)-DEM.Z(m,n);
             delta_D=sqrt(delta_Y^2+delta_X^2);
 
